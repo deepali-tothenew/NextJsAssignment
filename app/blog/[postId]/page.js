@@ -7,7 +7,7 @@ function BlogPostId({params}) {
 
   const fetchBlogDataById = async () => {
       try {
-        const response = await fetch(`https://dummyapi.online/api/blogposts/${params.postId}`);
+        const response = await fetch(`/api/blog/${params.postId}`);
         const data = await response.json();
         setBlogData(data);
       } catch (error) {
@@ -25,7 +25,7 @@ function BlogPostId({params}) {
         <>
           <h2 className='text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white'>{blogData.title}</h2>
           <div className='mt-10 text-lg text-slate-600 text-center mx-auto dark:text-slate-400'>
-            {blogData?.content}
+            {blogData?.description}
           </div>
         </>
       ) : (

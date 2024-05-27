@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
