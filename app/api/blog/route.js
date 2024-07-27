@@ -29,7 +29,11 @@ export async function GET(request) {
   for (const blog of blogs) {
       const user = await User.findOne({ userId: blog.userId });
       const formattedDate = format(blog.createdAt, 'MMMM d, yyyy');
-      updatedBlogs.push({ id: blog.blogId, title: blog.title, description: blog.description, createdAt: formattedDate, author: user.name, isBlogAuthor: userId && userId == blog.userId ? true : false });
+      if (user) {
+        updatedBlogs.push({ id: blog.blogId, title: blog.title, description: blog.description, createdAt: formattedDate, author: user.name, isBlogAuthor: userId && userId == blog.userId ? true : false, author_pic: user.profile_pic });
+      } else {
+        updatedBlogs.push({ id: blog.blogId, title: blog.title, description: blog.description, createdAt: formattedDate, isBlogAuthor: false });
+      }
   }
 
   return NextResponse.json({ blogs: updatedBlogs });

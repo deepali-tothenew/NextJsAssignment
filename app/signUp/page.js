@@ -18,7 +18,7 @@ const RegisterForm = () => {
     if (localStorage.getItem("token") != null) {
         router.push('/');
     }
-  }, []);
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,7 +64,9 @@ const RegisterForm = () => {
       <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder='Email' className="border border-slate-500 px-8 py-2" />
         <label htmlFor="password"><b>Password</b></label>
       <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' className="border border-slate-500 px-8 py-2" />
-      <button type="submit" className="bg-green-600 font-bold text-white py-3 px-6 w-full">Register</button>
+      <label htmlFor="name"><b>Profile Pic Link</b></label>
+      <input type="text" name="profile_pic" value={formData.profile_pic} onChange={handleChange} placeholder='Profile Pic Link' className="border border-slate-500 px-8 py-2" />
+        <button type="submit" className="bg-green-600 font-bold text-white py-3 px-6 w-full">Register</button>
     </form>
     <p><Link href="/login">Already a user, Login</Link></p>
     </main>

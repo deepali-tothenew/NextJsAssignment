@@ -3,12 +3,17 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the component
+const DynamicComponent = dynamic(() => import('../../components/LazyLoading'));
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [loadDynamicComponent, setLoadDynamicComponent] = useState(false)
 
   const router = useRouter();
 
@@ -17,7 +22,7 @@ const LoginForm = () => {
     if (localStorage.getItem("token") != null) {
         router.push('/');
     }
-  }, []);
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,6 +62,12 @@ const LoginForm = () => {
 
   return (
     <main className="flex flex-col items-center justify-between p-8">
+    {loadDynamicComponent ? <DynamicComponent /> : (
+      <button onClick={() => setLoadDynamicComponent(!loadDynamicComponent)}>
+        Click Me for Ads
+      </button>
+    )}
+    
     <h2 className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white p-8">Login</h2>
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-1/2">
         <label htmlFor="email"><b>Email</b></label>

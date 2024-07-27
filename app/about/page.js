@@ -4,7 +4,7 @@ export default function About() {
       <div className="mt-4 max-w-3xl space-y-6">
       <p>Welcome to Ink & Insight, where passion meets expression!</p>
 
-      <p>At Ink & Insight, we believe in the power of words to inspire, inform, and connect. Whether you're seeking captivating stories, insightful commentary, or practical advice, you've come to the right place.</p>
+      <p>At Ink & Insight, we believe in the power of words to inspire, inform, and connect. Whether you&#39;re seeking captivating stories, insightful commentary, or practical advice, you&#39;ve come to the right place.</p>
 
 <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">Who We Are:</p>
 
@@ -16,14 +16,17 @@ export default function About() {
 
 <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">Why We Do It:</p>
 
-<p>Simply put, we're here to make a difference. We believe in the transformative power of knowledge and the importance of community. By fostering meaningful conversations and fostering connections, we strive to empower our readers to live more informed, inspired, and fulfilling lives.</p>
+<p>Simply put, we&#39;re here to make a difference. We believe in the transformative power of knowledge and the importance of community. By fostering meaningful conversations and fostering connections, we strive to empower our readers to live more informed, inspired, and fulfilling lives.</p>
 
 <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50 ">Join Us:</p>
 
-<p>Whether you're a seasoned reader or a newcomer to our site, we invite you to explore, engage, and connect with us. Dive into our archives, join the discussion in the comments section, or reach out to us directly. Your voice matters, and we're here to listen.</p>
+<p>Whether you&#39;re a seasoned reader or a newcomer to our site, we invite you to explore, engage, and connect with us. Dive into our archives, join the discussion in the comments section, or reach out to us directly. Your voice matters, and we&#39;re here to listen.</p>
 
-<p>Thank you for being a part of the Ink & Insight community. Together, let's embark on a journey of discovery, learning, and growth.</p>
+<p>Thank you for being a part of the Ink & Insight community. Together, let&#39;s embark on a journey of discovery, learning, and growth.</p>
       </div>
     </main>
   );
 }
+
+  // Define revalidation time
+  export const revalidate = 10; // Revalidate the page every 10 seconds

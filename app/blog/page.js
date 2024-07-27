@@ -3,11 +3,16 @@
 import { useEffect, useState } from 'react';
 import Card from "@/components/Card";
 import { useRouter } from "next/navigation";
+import { setupWebVitals } from '../../libs/reportWebVitals';
 
 export default function Blog() {
     const router = useRouter();
     const [blogPosts, setBlogPosts] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+      setupWebVitals();
+    }, []);
 
     const fetchBlogData = async () => {
         try {
